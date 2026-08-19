@@ -1,0 +1,687 @@
+/* Custom CSS for MavroNexus */
+
+/* 
+0. Global styling
+1. Navigation menu styling
+2. Hero section styling
+3. Services section styling
+4. Portfolio section styling
+5. Why choose us section styling
+6. Contact section styling
+7. Footer section styling
+8. Button styling
+9. Media query
+*/
+
+/* =================================================================================== */
+/* 0. Global styling                                                                   */
+/* =================================================================================== */
+:root {
+  --primary-color: #35C0C5 ;
+  --secondary-color: #102871 ;
+  --background-color: #080D18;
+  --card-color: #101827  ;
+  --text-color: #F5F7FA;
+  --border: #263044;
+  --cardGlow: radial-gradient(
+    circle,
+    rgba(53, 192, 197, 0.12) 0%,
+    rgba(16, 40, 113, 0.24) 30%,
+    rgba(16, 40, 113, 0.12) 55%,
+    transparent 75%
+  );
+  --shadow: #00000059;
+  --white-color: #fff;
+  --placeholder: gray;
+}
+
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b1220;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid #0b1220;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: color-mix(
+    in srgb,
+    var(--primary-color) 60%,
+    #0b1220
+);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--white-color);
+  font-weight: bold;
+}
+
+p {
+  color: var(--white-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.primaryText {
+  color: var(--primary-color);
+}
+
+.mavronexus-subtitle {
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-weight: bold;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: fit-content;
+  position: relative;
+  padding-left: 30px;
+}
+
+.mavronexus-subtitle::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card-tag {
+  color: var(--text-color);
+  border: 1px solid var(--border) ;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: fit-content;
+  position: relative;
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+/* =================================================================================== */
+/* 1. Navigation menu styling                                                          */
+/* =================================================================================== */
+.navbar-nav .nav-link, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: #fff;
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;  
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+nav img {
+  width: 250px;
+  height: auto;
+}
+
+/* =================================================================================== */
+/* 2. Hero section styling                                                             */
+/* =================================================================================== */
+header {
+  margin-top: 100px;
+}
+
+.header-right {
+  position: relative;
+  background-image: url(../img/MavroNexus_Header_Dekoracija.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 173px 12px;
+}
+
+.header-card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.5s ;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header-card:hover {
+  box-shadow: 0px 0px 24px 4px var(--shadow) ;
+  transform: translateY(-10px);
+}
+
+.mavronexus-card {
+  position: absolute;
+  top: 28%;
+  left: 41%;
+  width: 129px;
+  height: 129px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: var(--card-color);
+}
+
+.mavronexus-card img {
+  width: 200px;
+}
+
+.planning-card {
+  position: absolute;
+  top: -5%;
+  left: 5%;
+  background-color: var(--card-color);
+}
+
+.uiuxdesign-card {
+  position: absolute;
+  top: -5%;
+  right: 7%;
+  background-color: var(--card-color);
+}
+
+.codding-card {
+  position: absolute;
+  bottom: -10%;
+  left: 5%;
+  background-color: var(--card-color);
+}
+
+.testinglaunch-card {
+  position: absolute;
+  bottom: -10%;
+  right: 7%;
+  background-color: var(--card-color);
+}
+
+#tsparticles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* =================================================================================== */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 100px 0px;
+
+}
+/* =================================================================================== */
+
+
+/* =================================================================================== */
+/* 3. Services section styling                                                            */
+/* =================================================================================== */
+.service-card {
+  background-color: var(--card-color);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: -70%;
+    bottom: -70%;
+
+    background: var(--cardGlow);
+    z-index: -1;
+}
+
+.service-card .serviceIcon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--card-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 24px 4px var(--shadow);
+}
+
+.service-card .serviceIcon i {
+  color: var(--text-color);
+}
+
+.mavronexus-badge {
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  transform: rotate(45deg);
+  font-weight: bold;
+  box-shadow: 0px 10px 40px -5px var(--shadow);
+}
+
+.service-card:hover {
+  box-shadow: 0px 0px 24px 4px var(--shadow);
+  transform: translateY(-10px);
+}
+
+/* =================================================================================== */
+/* 4.  Portfolio section styling                                                            */
+/* =================================================================================== */
+.portfolio-card {
+  background-color: var(--background-color);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0px 0px 24px 4px var(--shadow);
+  transform: translateY(-10px);
+}
+
+.portfolio-card img {
+  width: 100%;
+}
+
+/* =================================================================================== */
+/* 5. Why choose us section styling                                                   */
+/* =================================================================================== */
+
+.whyChooseUs-card {
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.whyChooseUs-card span {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 24px 4px var(--shadow);
+}
+
+.whyChooseUs-card span i {
+  color: var(--white-color);
+}
+
+.borderRight {
+  border-right: 1px solid var(--border);
+}
+
+/* =================================================================================== */
+/* 6. Contact section styling                                                          */
+/* =================================================================================== */
+label {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+label::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+}
+
+.form-control {
+  background-color:  var(--background-color);
+  outline: none;
+  border: 1px solid var(--border);
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+input {
+  height: 50px;
+}
+
+.form-control:focus {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--shadow);
+}
+
+.form-control::placeholder {
+  color: var(--placeholder);
+}
+
+/* =================================================================================== */
+/* 7. Footer section styling                                                           */
+/* =================================================================================== */
+.footerContent {
+  color: var(--text-color);
+}
+
+.footerContent a:hover {
+  color: var(--primary-color);
+}
+
+hr {
+  color: var(--primary-color);
+}
+
+.footerCopyright a {
+  color: var(--primary-color);
+}
+
+.footerCopyright a:hover {
+  color: var(--text-color);
+}
+
+
+/* =================================================================================== */
+/* 8. Button styling                                                                   */
+/* =================================================================================== */
+.btn {
+  height: 50px;
+  padding: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* =========================
+   PRIMARY
+========================= */
+
+.btn-mavronexus-primary {
+  background-color: var(--primary-color); /* #35C0C5 */
+  border: 2px solid var(--primary-color);
+  color: var(--background-color); /* #080D18 */
+
+  box-shadow:
+    0 4px 15px rgba(53, 192, 197, 0.20);
+}
+
+.btn-mavronexus-primary:hover {
+  background-color: #43CED3;
+  border-color: #43CED3;
+  color: var(--background-color);
+  box-shadow: 0 6px 22px rgba(53, 192, 197, 0.32);
+  transform: translateY(-2px);
+}
+
+.btn-mavronexus-primary:active {
+  transform: translateY(0);
+  box-shadow:  0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   SECONDARY
+========================= */
+
+.btn-mavronexus-secondary {
+  background-color: rgba(16, 40, 113, 0.12);
+  border: 2px solid rgba(53, 192, 197, 0.35);
+  color: var(--white-color);
+  box-shadow:  0 4px 15px rgba(0, 0, 0, 0.20);
+}
+
+.btn-mavronexus-secondary:hover {
+  background-color: rgba(53, 192, 197, 0.10);
+  border-color: var(--primary-color);
+  color: var(--white-color);
+  box-shadow: 0 5px 18px rgba(53, 192, 197, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn-mavronexus-secondary:active {
+  transform: translateY(0);
+  box-shadow:  0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =================================================================================== */
+/* 9. Media query                                                                            */
+/* =================================================================================== */
+@media screen and (max-width: 1024px) {
+  header {
+    margin-top: 50px;
+  }
+
+  .navbar-toggler {
+    border: 1px solid var(--border);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .header-right {
+    height: 500px;
+    margin-top: 100px;
+    background-position: 92px 20px;
+  }
+
+  .mavronexus-card {
+    width: 240px;
+    height: 240px;
+    top: 28%;
+    left: 36%;
+  }
+
+  .planning-card {
+    top: 0%;
+    left: 10%;
+  }
+
+  .uiuxdesign-card {
+    top: 0%;
+    right: 10%;
+  }
+
+  .codding-card {
+    bottom: 0%;
+    left: 10%;
+  }
+
+  .testinglaunch-card {
+  bottom: 0%;
+  right: 10%;
+  }
+
+  .portfolio-card::after {
+    width: 800px;
+    top: -115%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .portfolio-card::after {
+    width: 800px;
+    top: -150%;
+  }
+
+  .header-right {
+    background-position: 5px 20px;
+  }
+
+  .mavronexus-card {
+    width: 230px;
+    height: 230px;
+    top: 27%;
+    left: 35%;
+  }
+         
+  .planning-card {
+    top: 0%;
+    left: 4%;
+  }
+
+  .uiuxdesign-card {
+    top: 0%;
+    right: 4%;
+  }
+
+  .codding-card {
+    bottom: 0%;
+    left: 4%;
+  }
+
+  .testinglaunch-card {
+  bottom: 0%;
+  right: 4%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services, .portfolio, .whyChooseUs, .contact {
+    text-align: center;
+  }
+
+  .contact form {
+    text-align: left;
+  }
+
+  .mavronexus-card {
+    width: 230px;
+    height: 227px;
+    top: 33%;
+    left: 34%;
+  }
+
+  .planning-card {
+    top: 0%;
+    left: 4%;
+  }
+
+  .uiuxdesign-card {
+    top: 0%;
+    right: 5%;
+  }
+
+  .codding-card {
+    bottom: 0%;
+    left: 4%;
+  }
+
+  .testinglaunch-card {
+  bottom: 0%;
+  right: 5%;
+  }
+
+  .portfolio-card::after {
+    width: 800px;
+    top: -140%;
+  }
+
+  .header-right {
+    background-position: 0px 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mavronexus-card {
+    width: 150px;
+    height: 150px;
+    top: 35%;
+    left: 2%;
+  }
+
+  .planning-card {
+    top: -10%;
+    left: 5%;
+  }
+
+  .uiuxdesign-card {
+    top: 20%;
+    right: 5%;
+  }
+
+  .codding-card {
+    bottom: -10%;
+    left: 5%;
+  }
+
+  .testinglaunch-card {
+    bottom: 20%;
+    right: 5%;
+  }
+
+  .portfolio-card::after {
+    width: 800px;
+    top: -94%;
+  }
+
+  .header-right {
+    background-image: url(../img/MavroNexus_Header_Dekoracija_Mobilni.png);
+  }
+}
